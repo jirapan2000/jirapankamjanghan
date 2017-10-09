@@ -175,23 +175,23 @@ echo "-------"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
 echo "Dropbear : 80, 443"  | tee -a log-install.txt
 echo "Squid3   : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
-echo "OpenVPN  : TCP 1194 (ดาวน์โหลดไฟล์คอนฟิก : http://$MYIP:81/connect.ovpn)"  | tee -a log-install.txt
+echo "OpenVPN  : TCP 1194 (CONFIG : http://$MYIP:81/connect.ovpn)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo "nginx    : 81"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
-echo "menu (ดูเมนูต่างๆ)"  | tee -a log-install.txt
-echo "usernew (สร้างผู้ใช้ใหม่)"  | tee -a log-install.txt
-echo "trial (สร้างผู้ใช้ทดลอง)"  | tee -a log-install.txt
-echo "removeuser (ลบบัญชีผู้ใช้)"  | tee -a log-install.txt
-echo "usercheck (เช็คผูู้ใช้งานปัจจุบัน)"  | tee -a log-install.txt
-echo "member (เช็คผู้ใช้งานทั้งหมดที่มีในระบบ)"  | tee -a log-install.txt
-echo "restart (รีสตาร์ท dropbear, webmin, squid3, openvpn dan ssh)"  | tee -a log-install.txt
-echo "reboot (รีสตาร์ท ระบบ)"  | tee -a log-install.txt
-echo "speedtest (ทดสอบความเร็ว)"  | tee -a log-install.txt
-echo "info (เช็คระบบ)"  | tee -a log-install.txt
-echo "about (ติดต่อแอดมิน)"  | tee -a log-install.txt
+echo "menu (SHOW MENU)"  | tee -a log-install.txt
+echo "usernew (CREATE USER)"  | tee -a log-install.txt
+echo "trial (CREATE USER TRIAL)"  | tee -a log-install.txt
+echo "removeuser (DELETE USER)"  | tee -a log-install.txt
+echo "usercheck (CHECK USER ONLINE)"  | tee -a log-install.txt
+echo "member (CHECK ALL USER)"  | tee -a log-install.txt
+echo "restart (RESTART dropbear, webmin, squid3, openvpn dan ssh)"  | tee -a log-install.txt
+echo "reboot (RESTART SYSTEM)"  | tee -a log-install.txt
+echo "speedtest (SPEEDTEST)"  | tee -a log-install.txt
+echo "info (CHECK SYSTEN)"  | tee -a log-install.txt
+echo "about (CONTACH ADMIN)"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
 echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
