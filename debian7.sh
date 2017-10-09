@@ -198,7 +198,6 @@ echo "Webmin   : http://$MYIP:10000/"  | tee -a log-install.txt
 echo "Timezone : Asia/Bangkok (GMT +7)"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "ติดต่อผู้ดูแลระบบ"  | tee -a log-install.txt
 echo "FB JIRAPAN KAMJANGHAN"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Log Instalasi --> /root/log-install.txt"  | tee -a log-install.txt
