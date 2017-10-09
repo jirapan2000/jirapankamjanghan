@@ -4,9 +4,6 @@
 # Mod by Bustami Arifin
 # ==================================================
 
-# initialisasi var
-export DEBIAN_FRONTEND=noninteractive
-OS=`uname -m`;
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 
