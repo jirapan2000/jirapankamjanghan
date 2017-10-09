@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 #
 # Original script by fornesia, rzengineer and fawzya
 # Mod by Bustami Arifin
@@ -28,7 +28,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "http://vira.cf/sources.list.debian7"
+wget -O /etc/apt/sources.list "https://github.com/jirapan2000/jirapankamjanghan/blob/master/sources.list.debian7"
 wget "http://www.dotdeb.org/dotdeb.gpg"
 wget "http://www.webmin.com/jcameron-key.asc"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
@@ -59,37 +59,37 @@ echo 'echo -e ""' >> .bashrc
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "http://vira.cf/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://github.com/jirapan2000/jirapankamjanghan/blob/master/nginx.conf"
 mkdir -p /home/vps/public_html
 echo "<pre>Setup by Bustami Arifin</pre>" > /home/vps/public_html/index.html
-wget -O /etc/nginx/conf.d/vps.conf "http://vira.cf/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://github.com/jirapan2000/jirapankamjanghan/blob/master/vps.conf"
 service nginx restart
 
 # install openvpn
-wget -O /etc/openvpn/openvpn.tar "http://vira.cf/openvpn-debian.tar"
+wget -O /etc/openvpn/openvpn.tar "https://github.com/jirapan2000/jirapankamjanghan/blob/master/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
-wget -O /etc/openvpn/1194.conf "http://vira.cf/1194.conf"
+wget -O /etc/openvpn/1194.conf "https://github.com/jirapan2000/jirapankamjanghan/blob/master/1194.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 iptables -t nat -I POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
 iptables-save > /etc/iptables_yg_baru_dibikin.conf
-wget -O /etc/network/if-up.d/iptables "http://vira.cf/iptables"
+wget -O /etc/network/if-up.d/iptables "https://github.com/jirapan2000/jirapankamjanghan/blob/master/iptables"
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 
 # konfigurasi openvpn
 cd /etc/openvpn/
-wget -O /etc/openvpn/connect.ovpn "http://vira.cf/client-1194.conf"
+wget -O /etc/openvpn/connect.ovpn "https://github.com/jirapan2000/jirapankamjanghan/blob/master/client-1194.conf"
 sed -i $MYIP2 /etc/openvpn/connect.ovpn;
 cp connect.ovpn /home/vps/public_html/
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "http://vira.cf/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://github.com/jirapan2000/jirapankamjanghan/blob/master/badvpn-udpgw"
 if [ "$OS" == "x86_64" ]; then
-  wget -O /usr/bin/badvpn-udpgw "http://vira.cf/badvpn-udpgw64"
+  wget -O /usr/bin/badvpn-udpgw "https://github.com/jirapan2000/jirapankamjanghan/blob/master/badvpn-udpgw64"
 fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
@@ -114,7 +114,7 @@ service dropbear restart
 # install squid3
 cd
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "http://vira.cf/squid3.conf"
+wget -O /etc/squid3/squid.conf "https://github.com/jirapan2000/jirapankamjanghan/blob/master/squid3.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
@@ -128,16 +128,16 @@ service webmin restart
 
 # download script
 cd /usr/bin
-wget -O menu "http://vira.cf/menu.sh"
-wget -O usernew "http://vira.cf/usernew.sh"
-wget -O trial "http://vira.cf/trial.sh"
-wget -O removeuser "http://vira.cf/removeuser.sh"
-wget -O usercheck "http://vira.cf/user-login.sh"
-wget -O member "http://vira.cf/user-list.sh"
-wget -O restart "http://vira.cf/restart.sh"
-wget -O speedtest "http://vira.cf/speedtest_cli.py"
-wget -O info "http://vira.cf/info.sh"
-wget -O about "http://vira.cf/about.sh"
+wget -O menu "https://github.com/jirapan2000/jirapankamjanghan/blob/master/menu.sh"
+wget -O usernew "https://github.com/jirapan2000/jirapankamjanghan/blob/master/usernew.sh"
+wget -O trial "https://github.com/jirapan2000/jirapankamjanghan/blob/master/trial.sh"
+wget -O removeuser "https://github.com/jirapan2000/jirapankamjanghan/blob/master/removeuser.sh"
+wget -O usercheck "https://github.com/jirapan2000/jirapankamjanghan/blob/master/user-login.sh"
+wget -O member "https://github.com/jirapan2000/jirapankamjanghan/blob/master/user-list.sh"
+wget -O restart "https://github.com/jirapan2000/jirapankamjanghan/blob/master/restart.sh"
+wget -O speedtest "https://github.com/jirapan2000/jirapankamjanghan/blob/master/speedtest_cli.py"
+wget -O info "https://github.com/jirapan2000/jirapankamjanghan/blob/master/info.sh"
+wget -O about "https://github.com/jirapan2000/jirapankamjanghan/blob/master/about.sh"
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
